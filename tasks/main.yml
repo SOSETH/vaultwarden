@@ -1,0 +1,29 @@
+- name: Install vaultwarden
+  become: True
+  package:
+    name:
+      - vaultwarden
+    state: present
+
+- name: Configure vaultwarden
+  become: True
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/vaultwarden/{{ item }}"
+    owner: root
+    group: root
+    mode: 0600
+  with_items:
+    - config.env
+    - Rocket.toml
+  notify: restart vaultwarden
+
+- name: Configure nginx dropin
+  become: True
+  template:
+    src: "nginx-dropin.conf.j2"
+    dest: "/etc/nginx/base.d/vaultwarden.conf"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart nginx

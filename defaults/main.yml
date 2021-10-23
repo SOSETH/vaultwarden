@@ -1,0 +1,22 @@
+vaultwarden_postgres_user: user
+vaultwarden_postgres_password: password
+vaultwarden_postgres_database: database
+vaultwarden_postgres_host: 127.0.0.1
+vaultwarden_postgres_max_conn: 25
+
+vaultwarden_smtp_user: user
+vaultwarden_smtp_password: password
+vaultwarden_smtp_from: vaultwarden@example.org
+vaultwarden_smtp_host: 127.0.0.1
+vaultwarden_smtp_from_name: Vaultwarden
+
+vaultwarden_signups_allowed: "false"
+vaultwarden_signups_allowed_domains: "foo.example.org"
+# vaultwarden_admin_token: needs to be set, e.g. openssl rand -base64 48
+
+vaultwarden_support_yubico: False
+vaultwarden_yubico_client_id: Foobar
+vaultwarden_yubico_secret_key: BarBaz
+
+vaultwarden_rocket_workers: 10
+vaultwarden_public_url: "https://foo.example.org"
