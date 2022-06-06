@@ -15,7 +15,6 @@
     mode: 0600
   with_items:
     - config.env
-    - Rocket.toml
   notify: restart vaultwarden
 
 - name: Configure nginx dropin
